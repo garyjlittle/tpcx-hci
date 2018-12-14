@@ -16,3 +16,11 @@ Scripts which support working with the TPCx-HCI benchmark.  The database hosts a
 
 * pg-hosts : A Space separated hostfile containing the names of the VM2,VM3 (Postgres VMs)
 * vacuum-remote.sh : Connects to all the hosts defined in pg-hosts and issues a "vacuum" command against the database named tpcv
+
+- - - -
+
+If we need to be able to access a PG database from any remote host (insecure) then we just put
+
+> host    all             all             all                     trust
+
+in the pg_hba.conf and bounce the database.
